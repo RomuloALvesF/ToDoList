@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace ToDoList
 {
-    internal class Crud
+    public class Crud
     {
-        public String Cadastrar()
+        List<Tarefa> tarefa = new List<Tarefa>();
+
+        public void Cadastrar()
         {
-            List<Tarefa> tarefa = new List<Tarefa>();
             int proximoId = 1;
 
             tarefa.Add(new Tarefa(DateTime.Now, true)
@@ -19,6 +20,7 @@ namespace ToDoList
                 Id = proximoId++,
                 Descricao = "Estudos",
                 Titulo = "Estudar todos os dias da semana!",
+
 
             });
 
@@ -29,13 +31,11 @@ namespace ToDoList
                 Titulo = "Trabalhar de segunda a sexta!",
 
             });
-            return "";
+            Console.WriteLine("Cadastra");
         }
 
         public void Listar()
         {
-
-            List<Tarefa> tarefa = new List<Tarefa>();
             foreach (var minhaTarefa in tarefa)
             {
                 Console.WriteLine("-----------------");
@@ -46,6 +46,7 @@ namespace ToDoList
                 minhaTarefa.StatusTarefa();
 
             }
+            return;
         }
 
     }

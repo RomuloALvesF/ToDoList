@@ -5,9 +5,11 @@ public static class Program
     {
 
         int opcao;
+        Crud crud = new Crud();
 
         do
         {
+
             Console.WriteLine("1 - Adicionar tarefa");
             Console.WriteLine("2 - Listar tarefas");
             Console.WriteLine("3 - Marcar como concluída");
@@ -24,9 +26,21 @@ public static class Program
                 Console.WriteLine("Entrada inválida, Digite um número.");
                 continue;
             }
+          
         }
         while (opcao != 6);
 
-
+        switch (opcao)
+        {
+            case 1:
+                crud.Cadastrar();
+                break;
+            case 2:
+                crud.Listar();
+                break;
+            default:
+                Console.WriteLine("Invalida");
+                break;
+        }
     }
 }
