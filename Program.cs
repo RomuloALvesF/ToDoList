@@ -26,21 +26,21 @@ public static class Program
                 Console.WriteLine("Entrada inválida, Digite um número.");
                 continue;
             }
-          
+
+            switch (opcao) //lemnrar de usar o 1 - cadastrar antes de testar o 2 - listar. 
+            {
+                case 1:
+                    crud.Cadastrar();
+                    break;
+                case 2:
+                    Console.WriteLine(crud.Listar());
+                    break;
+                default:
+                    Console.WriteLine("Invalida");
+                    break;
+            }
+
         }
         while (opcao != 6);
-
-        switch (opcao)
-        {
-            case 1:
-                crud.Cadastrar();
-                break;
-            case 2:
-                crud.Listar();
-                break;
-            default:
-                Console.WriteLine("Invalida");
-                break;
-        }
     }
 }

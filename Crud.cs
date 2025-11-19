@@ -31,10 +31,9 @@ namespace ToDoList
                 Titulo = "Trabalhar de segunda a sexta!",
 
             });
-            Console.WriteLine("Cadastra");
         }
 
-        public void Listar()
+        public bool Listar()
         {
             foreach (var minhaTarefa in tarefa)
             {
@@ -46,7 +45,12 @@ namespace ToDoList
                 minhaTarefa.StatusTarefa();
 
             }
-            return;
+            return true;
+        }
+
+        public string Teste()
+        {
+            return "Teste retorno";
         }
 
     }
