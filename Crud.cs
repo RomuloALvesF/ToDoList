@@ -11,24 +11,16 @@ namespace ToDoList
     {
         List<Tarefa> tarefa = new List<Tarefa>();
 
-        public void Cadastrar()
+        public void Cadastrar(string titulo, string descricao)
         {
             int proximoId = 1;
 
             tarefa.Add(new Tarefa(DateTime.Now, true)
             {
                 Id = proximoId++,
-                Descricao = "Estudos",
-                Titulo = "Estudar todos os dias da semana!",
+                Descricao = descricao,
+                Titulo = titulo,
 
-
-            });
-
-            tarefa.Add(new Tarefa(DateTime.Now, true)
-            {
-                Id = proximoId++,
-                Descricao = "Trabalhar",
-                Titulo = "Trabalhar de segunda a sexta!",
 
             });
         }
@@ -48,10 +40,10 @@ namespace ToDoList
             return true;
         }
 
-        public string Teste()
+        public string MarcarConcluida()
         {
+            tarefa.FirstOrDefault();
             return "Teste retorno";
         }
-
     }
 }

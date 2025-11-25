@@ -27,16 +27,30 @@ public static class Program
                 continue;
             }
 
-            switch (opcao) //lemnrar de usar o 1 - cadastrar antes de testar o 2 - listar. 
+            switch (opcao) 
             {
                 case 1:
-                    crud.Cadastrar();
+                    var titulo = Console.ReadLine();
+                    var descricao = Console.ReadLine();
+
+                    if (String.IsNullOrEmpty(titulo) || String.IsNullOrEmpty(descricao))
+                    {
+                        Console.WriteLine("Titulo ou descrição vazios, preenchimanto obrigatorio, reinicie o processo e tente novamente!");
+                        return;
+                    }                       
+                    crud.Cadastrar(titulo, descricao);
                     break;
                 case 2:
                     Console.WriteLine(crud.Listar());
                     break;
+                case 3:
+                    Console.WriteLine();
+                    break;
+                case 4:
+                    Console.WriteLine();
+                    break;
                 default:
-                    Console.WriteLine("Invalida");
+                    Console.WriteLine("Finalizando...");
                     break;
             }
 
