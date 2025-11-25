@@ -104,7 +104,7 @@ Esse projeto terá:
 
 ## Passo 10 — Tratamento de erros e UX simples
 
-* Use `int.TryParse` sempre que ler números. Não quebre o programa com exceções.
+* Usar `int.TryParse` sempre que ler números. Não quebre o programa com exceções.
 * Trate `null` ao buscar tarefas.
 * Mensagens curtas e informativas (ex.: “ID não encontrado”, “Tarefa atualizada com sucesso”).
 * Após cada ação, espere um `Console.ReadKey()` para o usuário ver a mensagem e então volte ao menu.
