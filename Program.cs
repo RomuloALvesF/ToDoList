@@ -52,7 +52,12 @@ public static class Program
                         Console.WriteLine("Digite um valor valido! Recomece a operação.");
                         return;
                     }
-                    Console.WriteLine(crud.MarcarConcluida(opcaoConcluir));
+
+                    if (crud.MarcarConcluida(opcaoConcluir) == false)
+                    {
+                        crud.Listar();
+                    }
+                    
                     
                     break;
                 case 4:

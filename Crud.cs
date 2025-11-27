@@ -41,7 +41,7 @@ namespace ToDoList
                 
                 if (minhaTarefa.Status == true)
                 {
-                    Console.WriteLine("Tarefa em andamento");
+                     Console.WriteLine("Tarefa em andamento"); //tenho que atualizar esse Listar
                 }
                 else
                 {
@@ -63,11 +63,10 @@ namespace ToDoList
 
             if (t == null)
             {
-                Console.WriteLine("Tafera: " + id + " não encontrada!");
-                
+                Console.WriteLine("Tafera: " + id + " não encontrada!");              
             }
 
-            return true;
+            return t.Status = false;
             
         }
         
