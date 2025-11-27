@@ -17,7 +17,7 @@ namespace ToDoList
 
             int proximoId = 1;
 
-            tarefa.Add(new Tarefa(DateTime.Now, false)
+            tarefa.Add(new Tarefa(DateTime.Now, true)
             {
 
                 Id = proximoId++,
@@ -37,16 +37,18 @@ namespace ToDoList
                 Console.WriteLine(minhaTarefa.Titulo);
                 Console.WriteLine(minhaTarefa.Descricao);
                 Console.WriteLine(minhaTarefa.Data);
-
+            
+                
                 if (minhaTarefa.Status == true)
                 {
-                    Console.WriteLine("Tarefa concluida");
+                    Console.WriteLine("Tarefa em andamento");
                 }
                 else
                 {
-                    Console.WriteLine("Tarefa em andamento");
+                    Console.WriteLine("Tarefa concluida");
 
                 }
+                
 
             }
             return "Colocar aqui a sequencia de opções";
@@ -62,6 +64,7 @@ namespace ToDoList
             if (t == null)
             {
                 Console.WriteLine("Tafera: " + id + " não encontrada!");
+                
             }
 
             return true;

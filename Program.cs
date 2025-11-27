@@ -44,7 +44,16 @@ public static class Program
                     Console.WriteLine(crud.Listar());
                     break;
                 case 3:
-                    Console.WriteLine(crud.MarcarConcluida(1));
+                    Console.WriteLine("Digite o ID da tarefa que quer conlcuir: ");
+                    var concluir = Console.ReadLine();
+
+                    if (!int.TryParse(concluir, out int opcaoConcluir))
+                    {
+                        Console.WriteLine("Digite um valor valido! Recomece a operação.");
+                        return;
+                    }
+                    Console.WriteLine(crud.MarcarConcluida(opcaoConcluir));
+                    
                     break;
                 case 4:
                     Console.WriteLine();
