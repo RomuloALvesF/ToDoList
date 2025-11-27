@@ -48,17 +48,6 @@ namespace ToDoList
         {
             get { return _data; }
         }
-
-        public void StatusTarefa()
-        {
-            if (_status == true)
-            {
-                Console.WriteLine("Tarefa concluida!");
-            }
-            else
-            {
-                Console.WriteLine("Tarefa em andamento!");
-            }
-        }
+        
     }
 }

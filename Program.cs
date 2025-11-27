@@ -18,7 +18,7 @@ public static class Program
             Console.WriteLine("6 - Sair");
 
             Console.WriteLine("Escolha uma opção");
-
+            
             string? entrada = Console.ReadLine();             
 
             if (!int.TryParse(entrada, out opcao))
@@ -38,13 +38,13 @@ public static class Program
                         Console.WriteLine("Titulo ou descrição vazios, preenchimanto obrigatorio, reinicie o processo e tente novamente!");
                         return;
                     }                       
-                    crud.Cadastrar(titulo, descricao);
+                    crud.Cadastrar(titulo, descricao);                   
                     break;
                 case 2:
                     Console.WriteLine(crud.Listar());
                     break;
                 case 3:
-                    Console.WriteLine();
+                    Console.WriteLine(crud.MarcarConcluida(1));
                     break;
                 case 4:
                     Console.WriteLine();
@@ -53,8 +53,9 @@ public static class Program
                     Console.WriteLine("Finalizando...");
                     break;
             }
-
-        }
+            
+        }       
         while (opcao != 6);
+       
     }
 }
