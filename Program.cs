@@ -1,4 +1,5 @@
 ﻿namespace ToDoList;
+
 public static class Program
 {
     public static void Main()
@@ -18,8 +19,8 @@ public static class Program
             Console.WriteLine("6 - Sair");
 
             Console.WriteLine("Escolha uma opção");
-            
-            string? entrada = Console.ReadLine();             
+
+            string? entrada = Console.ReadLine();
 
             if (!int.TryParse(entrada, out opcao))
             {
@@ -27,7 +28,7 @@ public static class Program
                 continue;
             }
 
-            switch (opcao) 
+            switch (opcao)
             {
                 case 1:
                     var titulo = Console.ReadLine();
@@ -37,8 +38,8 @@ public static class Program
                     {
                         Console.WriteLine("Titulo ou descrição vazios, preenchimanto obrigatorio, reinicie o processo e tente novamente!");
                         return;
-                    }                       
-                    crud.Cadastrar(titulo, descricao);                   
+                    }
+                    crud.Cadastrar(titulo, descricao);
                     break;
                 case 2:
                     Console.WriteLine(crud.Listar());
@@ -55,10 +56,10 @@ public static class Program
 
                     if (crud.MarcarConcluida(opcaoConcluir) == false)
                     {
-                        crud.Listar();
+                        Console.WriteLine("Tarefa concluida com sucesso");
                     }
-                    
-                    
+
+
                     break;
                 case 4:
                     Console.WriteLine();
@@ -67,9 +68,9 @@ public static class Program
                     Console.WriteLine("Finalizando...");
                     break;
             }
-            
-        }       
+
+        }
         while (opcao != 6);
-       
+
     }
 }
