@@ -19,6 +19,7 @@ public static class Program
             Console.WriteLine("6 - Sair");
 
             Console.WriteLine("Escolha uma opção");
+            Console.WriteLine("-----------------");
 
             string? entrada = Console.ReadLine();
 
@@ -31,7 +32,13 @@ public static class Program
             switch (opcao)
             {
                 case 1:
+                    Console.WriteLine("CADASTRO DE TAREFAS");
+                    Console.WriteLine("                   ");
+
+                    Console.WriteLine("Digite o titulo da tarefa:");
                     var titulo = Console.ReadLine();
+
+                    Console.WriteLine("Digite a descrição da tarefa:");
                     var descricao = Console.ReadLine();
 
                     if (String.IsNullOrEmpty(titulo) || String.IsNullOrEmpty(descricao))
@@ -40,8 +47,11 @@ public static class Program
                         return;
                     }
                     crud.Cadastrar(titulo, descricao);
+                    Console.WriteLine("Tarefa cadastrada com sucesso");
+                    Console.WriteLine("-----------------------------");
                     break;
                 case 2:
+                    Console.WriteLine("LISTAGEM DE TAREFA");
                     Console.WriteLine(crud.Listar());
                     break;
                 case 3:
@@ -57,6 +67,7 @@ public static class Program
                     if (crud.MarcarConcluida(opcaoConcluir) == false)
                     {
                         Console.WriteLine("Tarefa concluida com sucesso");
+                        Console.WriteLine("----------------------------");
                     }
 
 

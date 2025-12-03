@@ -32,30 +32,25 @@ namespace ToDoList
                           
             foreach (var minhaTarefa in tarefa)
             {
-                Console.WriteLine("-----------------");
-                Console.WriteLine(minhaTarefa.Id);
-                Console.WriteLine(minhaTarefa.Titulo);
-                Console.WriteLine(minhaTarefa.Descricao);
-                Console.WriteLine(minhaTarefa.Data);
+                Console.WriteLine("                    ");
+                Console.WriteLine("ID:" + minhaTarefa.Id);
+                Console.WriteLine("TITULO:" + minhaTarefa.Titulo);
+                Console.WriteLine("DESCRIÇÃO:" + minhaTarefa.Descricao);
+                Console.WriteLine("DATA:" + minhaTarefa.Data);
             
                 
                 if (minhaTarefa.Status == true)
                 {
-                     Console.WriteLine("Tarefa em andamento"); //tenho que atualizar esse Listar
+                     Console.WriteLine("STATUS: Tarefa em andamento"); //tenho que atualizar esse Listar
                 }
                 else
                 {
-                    Console.WriteLine("Tarefa concluida");
-
-                }
-                
-
+                    Console.WriteLine("STATUS: Tarefa concluida");
+                }    
             }
-            return "Colocar aqui a sequencia de opções";
-
+            return "-----------------------";
         }
-        
-        
+            
         public bool MarcarConcluida(int id)
         {
             
